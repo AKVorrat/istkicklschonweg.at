@@ -1,17 +1,9 @@
+{% extends "base.html" %}
 
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="theme-color" content="#9E9E9E">
-    <link href='https://fonts.googleapis.com/css?family=Lekton' rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet">
-
-    <title>Ist Kickl schon weg?</title>
-  </head>
-  <body>
-    Nein
-  </body>
-</html>
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Unterschreiben">
+</form>
+{% endblock %}

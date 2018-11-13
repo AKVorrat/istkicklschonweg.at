@@ -9,6 +9,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'VERY_SECRET_KEY_THAT_YOU_SHOUL
 ROOT_URLCONF = 'urls'
 SITE_ID = 1
 WSGI_APPLICATION = 'wsgi.application'
+# used for email confirmation
+PASSWORD_RESET_TIMEOUT_DAYS = 7
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,7 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.sites'
+    'django.contrib.sites',
+    'modules.petition',
 ]
 
 MIDDLEWARE = [
