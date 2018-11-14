@@ -65,7 +65,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Localization
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'de-AT'
 TIME_ZONE = 'CET'
 USE_I18N = True
 USE_L10N = True

@@ -1,9 +1,22 @@
 {% extends "base.html" %}
+{% load petition_filters %}
 
 {% block content %}
-<form method="post">
+<div class="petition-text">
+  <span> Some text introducing the petition. Maybe even telling the user how his data will be used to make him less reluctant to enter his personal information.</span>
+</div>
+<form method="post" novalidate>
   {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Unterschreiben">
+  
+  {% for field in form %}
+    {{ field.errors }}
+    {% if field|field_type:'checkboxinput' %}
+      {{ field }}
+      {{ field.label_tag }}
+    {% else %}
+      {{ field }}
+    {% endif %}
+  {% endfor %}
+  <input class="petition-input" type="submit" value="Unterschreiben">
 </form>
 {% endblock %}
