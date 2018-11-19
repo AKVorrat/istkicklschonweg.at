@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-Confirmed.
+  {% if confirmed %}
+    <h3> Bestätigung erfolgreich. </h3><br/>
+    <p> Deine Unterschrift wurde bestätigt. ...</p>
+  {% else %}
+    <h3> Bestätigung fehlgeschlagen. </h3><br/>
+    <p> Ein Fehler ist aufgetreten.</p>
+  {% endif %}
+
 {% endblock %}

@@ -59,7 +59,22 @@ Initially, just like the development setup although `DJANGO_SETTINGS_MODULE` wil
  - Test Nginx Config
  - Systemd?
 
+## Colors
+- Red
+    - #FF2833
+    - #CC252F
+    - #D6222B
+
+- Grey
+    - #F0F0F0
+    - #232323
+
+- Text
+    - #F0F0F0 (on red or dark grey)
+    - #A3A3A3 (on light grey)
+
 ## Strings
+- Unterüberschrift?
 
 - EMail
     - Confirm
@@ -68,7 +83,10 @@ Initially, just like the development setup although `DJANGO_SETTINGS_MODULE` wil
     - Thanks ?
 
 - Petition
-    - Call to petition
-    - Thanks
+    - Einleitender Text
+    - Danke
+    - Bestätigung (S)
 
 - Sündenliste
+    - Einleitender Text
+    - Die Liste

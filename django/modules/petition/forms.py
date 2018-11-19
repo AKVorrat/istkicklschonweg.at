@@ -21,7 +21,7 @@ class SignatureForm(forms.ModelForm):
     email = forms.EmailField(
         label="",
         max_length=256, 
-        widget=forms.TextInput(attrs={'placeholder': 'EMail', 'class': "petition-input"})
+        widget=forms.TextInput(attrs={'placeholder': 'E-Mail', 'class': "petition-input"})
     )
 
     newsletter = forms.BooleanField(

@@ -27,6 +27,9 @@ class ConfirmEmailView(TemplateView):
     template_name = 'confirm.html'
 
     def get(self, request, *args, token=None, **kwargs):
-        signature = Signature.objects.get(token=token)
+        try:
+            signature = Signature.objects.get(token=token)
+        except Signature.DoesNotExist:
+            return super().get(request, *args, confirmed=False, **kwargs)
         signature.confirm(token)
-        return super().get(request, *args, **kwargs)
+        return super().get(request, *args, confirmed=signature.confirmed, **kwargs)

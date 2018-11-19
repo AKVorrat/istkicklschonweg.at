@@ -1,0 +1,7 @@
+User-agent: *
+
+Host: istkicklschonweg.at
+
+Allow: /
+
+Disallow: /admin/*
