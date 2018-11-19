@@ -55,11 +55,13 @@ p {
   display: table;
 }
 .hero-body {
+  min-height: 60vh;
+}
+.petition-container {
   padding: 16px 16px 32px 16px;
   margin: 0 !important;
   background-color: #FF2833;
   color: #F0F0F0;
-  min-height: 60vh;
 }
 .nein {
   margin: auto 0 0 0;
@@ -82,10 +84,6 @@ p {
   height: 100%;
 }
 
-.content {
-  margin-top: 16px;
-}
-
 /* Sünden */ 
 section {
   background-color: #F0F0F0;
@@ -94,6 +92,10 @@ section {
 }
 
 /* Petition */
+.petition {
+  margin-top: 16px;
+}
+
 ::placeholder {
   color: #F0F0F0;
   opacity: .9;
@@ -109,6 +111,14 @@ section {
   opacity: .9;
 }
 
+.petition-input::selection {
+  background: #F0F0F0; 
+  color: #D6222B;
+}
+.petition-input::-moz-selection {
+  background: #F0F0F0; 
+  color: #D6222B;
+}
 .petition-input:hover, .petition-input:focus, label:hover:before{
   background-color: #CC252F !important;
 }
@@ -193,4 +203,17 @@ footer span {
 .footer-column {
   margin-top: auto;
   padding: 32px 16px 32px 16px;
+}
+
+/* Sharing */
+.social a {
+  display: inline-block;
+  font-size: 3rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.social a:hover{
+  transform: translateY(-4px);
+  text-shadow: 0px 8px 0px #FF2833;
 }

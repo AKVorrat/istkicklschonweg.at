@@ -1,37 +1,15 @@
 {% extends "base.html" %}
-{% load petition_filters %}
-
 
 {% block herotext %}
-  <div class="nein col-xs-12 col-md-8">
+  <div class="nein col-xs-12 col-md-7 col-lg-8 ">
     <h1>Nein.</h1>
-    <h3>9001 Unterschriften gesammelt.</h3> <br/>
+    <h3>{{ signature_count }} Unterschriften gesammelt.</h3> <br/>
   </div>
 {% endblock %}
 
 {% block herocontent %}
-  <div class="content col-xs-12 col-md-4">
-    <div class="petition-text">
-      <h3> Hier Unterschreiben! </h3><br/>
-      <p>Ein kurzer Text der die Petition vorstellt und über die Weiterverwendung der eingegeben Daten aufklärt.</p>
-    </div>
-    <form method="post" novalidate>
-      {% csrf_token %}
-      
-      {% for field in form %}
-        {% if field|field_type:'checkboxinput' %}
-          {{ field.errors }}
-          {{ field }}
-          {{ field.label_tag }}
-        {% else %}
-          {{ field.label_tag }}
-          {{ field.errors }}
-          {{ field }}
-        {% endif %}
-      {% endfor %}
-      <input class="petition-input" type="submit" value="Unterschreiben">
-      <span>* Pflichtfelder</span>
-    </form>
+  <div class="col-xs-12 col-md-5 col-lg-4">
+    {% include "form.html" %}
   </div>
 {% endblock %}
 
@@ -54,5 +32,10 @@
       </blockquote>
     </div>
   </section>
+  <div class="petition-container row middle-xs">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+      {% include "form.html" %}
+    </div>
+  </div>
 {% endblock %}
  

@@ -8,8 +8,12 @@ class PetitionView(FormView):
     form_class = SignatureForm
     success_url = '/thanks/'
 
+    def get_context_data(self, **kwargs):
+        kwargs['signature_count'] = Signature.objects.filter(confirmed=True).count()
+        return super(PetitionView, self).get_context_data(**kwargs)
+
     def form_valid(self, form, request):
-        res = super(FormView, self).form_valid(form)
+        res = super(PetitionView, self).form_valid(form)
         form.instance.send_confirmation_email(request)
         return res
     

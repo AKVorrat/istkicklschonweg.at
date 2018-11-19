@@ -1,0 +1,24 @@
+  {% load petition_filters %}
+  <div class="petition">
+    <div class="petition-text">
+      <h3> Hier Unterschreiben! </h3><br/>
+      <p>Ein kurzer Text der die Petition vorstellt und über die Weiterverwendung der eingegeben Daten aufklärt.</p>
+    </div>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      
+      {% for field in form %}
+        {% if field|field_type:'checkboxinput' %}
+          {{ field.errors }}
+          {{ field }}
+          {{ field.label_tag }}
+        {% else %}
+          {{ field.label_tag }}
+          {{ field.errors }}
+          {{ field }}
+        {% endif %}
+      {% endfor %}
+      <input class="petition-input" type="submit" value="Unterschreiben">
+      <span>* Pflichtfelder</span>
+    </form>
+</div>
