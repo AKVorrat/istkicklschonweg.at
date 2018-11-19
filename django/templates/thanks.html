@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
-{% block content %}
-<h3> Danke für deine Teilnahme. </h3>
-<p> Bitte schau in deine E-Mails und verwende den Link den wir dir zugeschickt haben um deine Unterschrift zu bestätigen.</p>
+
+{% block herotext %}
+  <div class="nein">
+    <h1>Danke.</h1>
+    <h3>Ein Bestätigungslink wurde dir zugesendet.</h3> <br/>
+  </div>
+{% endblock %}
+
+{% block herofoot %}
+   <div class="intro row middle-xs">
+      <div class="col-xs-8 col-xs-offset-2">
+        <blockquote>
+          Social
+        </blockquote>
+      </div>
+    </div>
+  </div>
 {% endblock %}

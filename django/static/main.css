@@ -38,6 +38,9 @@ blockquote {
   margin: 0;
   padding: 0;
 }
+a {
+  color: #F0F0F0;
+}
 p, span, input {
   font-size: 1rem;
 }
@@ -61,7 +64,7 @@ p {
 .nein {
   margin: auto 0 0 0;
 }
-.nein > h3 {
+.nein > h3, .errorlist {
   background-color: #F0F0F0;
   color: #FF2833;
 }  
@@ -106,18 +109,15 @@ section {
   opacity: .9;
 }
 
-.petition-input:hover, .petition-input:focus, label:hover:before, label:focus:before {
+.petition-input:hover, .petition-input:focus, label:hover:before{
   background-color: #CC252F !important;
 }
 
-.petition-input, label, .petition-text {
+.petition-input, .petition-text {
   margin-bottom: 8px;
 }
-.petition-input[type=submit] {
-  margin: 0;
-}
 
-.petition-input {
+.petition-input, label:before {
   border: 0;
   padding: 8px;
   background-color: #D6222B;
@@ -129,6 +129,20 @@ section {
 }
 
 label {
+  display:inline-block;
+  margin-bottom: 4px;
+}
+
+label.required:after {
+  content: " *"
+}
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  display:none;
+}
+
+input[type="checkbox"] + label {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -138,7 +152,8 @@ label {
   width: 100%;
   box-sizing: border-box;
 } 
-label:before {  
+
+input[type="checkbox"] + label:before {
   content: "";
   width: 16px;
   height: 16px;
@@ -147,17 +162,12 @@ label:before {
   left: 0;
   top: 2px;
 }
-
-input[type=checkbox] {
-  box-sizing: border-box;
-  display:none;
+input[type="checkbox"]:checked + label:before {
+  background-color: #FFD0D0;
+  opacity: 1;
 }
-input[type=checkbox] + label:before {
-  background-color: #D6222B;
-  opacity: 0.5;
-}
-input[type=checkbox]:checked + label:before {
-  background-color: #CC252F;
+input[type="checkbox"]:checked:hover + label:before {
+  background-color: #FFD0D0 !important;
   opacity: 1;
 }
 
@@ -165,7 +175,6 @@ input[type=checkbox]:checked + label:before {
   list-style: none;
   padding: 0;
   margin: 0 0 8px 0;
-  color: #CC252F;
 }
 
 /* Footer */
@@ -177,6 +186,8 @@ footer {
 footer span {
   background-color: #FF2833;
   color: #F0F0F0;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 .footer-column {

@@ -53,7 +53,7 @@ Running:
 
 ## Production Setup
 
-Initially, just like the development setup although `DJANGO_SETTINGS_MODULE` will be provided by the `start_gunicorn.sh` script.
+???
 
 ### TODO:
  - Test Nginx Config

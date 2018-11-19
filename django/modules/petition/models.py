@@ -9,13 +9,16 @@ generator = TokenGenerator()
 class Signature(models.Model):
     first_name = models.CharField(max_length=256)
     last_name = models.CharField(max_length=256)
-    message = models.TextField()
 
-    email = models.EmailField(max_length=256, unique=True)
+    email = models.EmailField("E-Mail", max_length=256, unique=True)
     token = models.CharField(max_length=20, unique=True)
 
     confirmed = models.BooleanField(default=False)
     newsletter = models.BooleanField()
+
+    class Meta:
+        verbose_name = "Unterschrift"
+        verbose_name_plural = "Unterschriften"
 
     def __str__(self):
         return '[{}] {} {}, {}'.format(

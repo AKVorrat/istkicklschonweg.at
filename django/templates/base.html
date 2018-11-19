@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="theme-color" content="#9E9E9E">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css' rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel="stylesheet">
+    <link href='/static/flexboxgrid.min.css' rel="stylesheet">
+    <link href='/static/fonts.css' rel="stylesheet">
     <link href='/static/main.css' rel="stylesheet">
 
     <title>Ist Kickl schon weg?</title>
@@ -14,36 +14,21 @@
   <body>
     <div class="hero col">
       <div class="hero-body row">
-        <div class="nein col-xs-12 col-md-8">
-          <h1>Nein.</h1>
-          <h3>Eine detailliertere Unterüberschrift?</h3> <br/>
-        </div>
-        <div class="content col-xs-12 col-md-4">
-          {% block content %}{% endblock %}
-        </div>
+        {% block herotext %}{% endblock %}
+        {% block herocontent %}{% endblock %}
       </div>
       <div class="hero-foot">
-        <div class="intro row middle-xs">
-          <div class="col-xs-8 col-xs-offset-2">
-            <blockquote>
-              Einführender Text zur "Sündenliste" der zum runterscrollen verleitet.
-            </blockquote>
-          </div>
-        </div>
-      </div>
+        {% block herofoot %}{% endblock %}
     </div>
-    <section class="row middle-xs">
-      <div class="col-xs-8 col-xs-offset-2">
-        <blockquote>
-          Eine Sünde?
-        </blockquote>
-      </div>
-    </section>
+    {% block bodycontent %}{% endblock %}
     <footer class="row">
       <div class="footer-column col-xs-6">
-        <span>© Max Wolschlager, 2018</span>
+        <span>made by meks</span><br>
       </div>
-      <div class="footer-column col-xs-6"></div>
+      <div class="footer-column col-xs-6">
+        <span><a href="https://epicenter.works/kontakt">Impressum</a></span><br>
+        <span><a href="mailto:feedback@istkicklschonweg.at">feedback@istkicklschonweg.at</a></span><br>
+      </div>
     </footer>
   </body>
 </html>

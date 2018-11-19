@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 
-{% block content %}
-  {% if confirmed %}
-    <h3> Bestätigung erfolgreich. </h3><br/>
-    <p> Deine Unterschrift wurde bestätigt. ...</p>
-  {% else %}
-    <h3> Bestätigung fehlgeschlagen. </h3><br/>
-    <p> Ein Fehler ist aufgetreten.</p>
-  {% endif %}
+{% block herotext %}
+  <div class="nein">
+    {% if confirmed %}
+      <h1>Bestätigt.</h1>
+      <h3>Deine Unterschrift wurde bestätigt.</h3> <br/>
+    {% else %}
+      <h1>Fehler.</h1>
+      <h3>Ein Fehler ist aufgetreten.</h3> <br/>
+    {% endif %}
+  </div>
+{% endblock %}
 
+{% block herofoot %}
+   <div class="intro row middle-xs">
+      <div class="col-xs-8 col-xs-offset-2">
+        <blockquote>
+          Social
+        </blockquote>
+      </div>
+    </div>
+  </div>
 {% endblock %}

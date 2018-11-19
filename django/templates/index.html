@@ -1,23 +1,58 @@
 {% extends "base.html" %}
 {% load petition_filters %}
 
-{% block content %}
-<div class="petition-text">
-  <h3> Hier Unterschreiben! </h3><br/>
-  <p>Ein kurzer Text der die Petition vorstellt und über die Weiterverwendung der eingegeben Daten aufklärt.</p>
-</div>
-<form method="post" novalidate>
-  {% csrf_token %}
-  
-  {% for field in form %}
-    {{ field.errors }}
-    {% if field|field_type:'checkboxinput' %}
-      {{ field }}
-      {{ field.label_tag }}
-    {% else %}
-      {{ field }}
-    {% endif %}
-  {% endfor %}
-  <input class="petition-input" type="submit" value="Unterschreiben">
-</form>
+
+{% block herotext %}
+  <div class="nein col-xs-12 col-md-8">
+    <h1>Nein.</h1>
+    <h3>9001 Unterschriften gesammelt.</h3> <br/>
+  </div>
 {% endblock %}
+
+{% block herocontent %}
+  <div class="content col-xs-12 col-md-4">
+    <div class="petition-text">
+      <h3> Hier Unterschreiben! </h3><br/>
+      <p>Ein kurzer Text der die Petition vorstellt und über die Weiterverwendung der eingegeben Daten aufklärt.</p>
+    </div>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      
+      {% for field in form %}
+        {% if field|field_type:'checkboxinput' %}
+          {{ field.errors }}
+          {{ field }}
+          {{ field.label_tag }}
+        {% else %}
+          {{ field.label_tag }}
+          {{ field.errors }}
+          {{ field }}
+        {% endif %}
+      {% endfor %}
+      <input class="petition-input" type="submit" value="Unterschreiben">
+      <span>* Pflichtfelder</span>
+    </form>
+  </div>
+{% endblock %}
+
+{% block herofoot %}
+   <div class="intro row middle-xs">
+      <div class="col-xs-8 col-xs-offset-2">
+        <blockquote>
+          Einführender Text zur "Sündenliste" der zum runterscrollen verleitet.
+        </blockquote>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block bodycontent %}
+  <section class="row middle-xs">
+    <div class="col-xs-8 col-xs-offset-2">
+      <blockquote>
+        Eine Sünde?
+      </blockquote>
+    </div>
+  </section>
+{% endblock %}
+ 
