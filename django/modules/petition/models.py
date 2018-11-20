@@ -25,6 +25,9 @@ class Signature(models.Model):
             'Confirmed' if self.confirmed else 'Pending',
             self.first_name, self.last_name, self.email 
         )
+    
+    def full_name(self):
+        return '{0} {1}'.format(self.first_name, self.last_name)
 
     def send_confirmation_email(self, request):
         self.token = generator.make_token(self)
@@ -36,7 +39,13 @@ class Signature(models.Model):
             '',
             'noreply@epicenter.works',
             [self.email],
-            html_message=render_to_string('email/confirm.html', {'confirmation_url': confirmation_url}),
+            html_message=render_to_string(
+                'email/confirm.html', 
+                {
+                    'confirmation_url': confirmation_url,
+                    'full_name': self.full_name()
+                }
+            ),
             fail_silently=False
         )
 
