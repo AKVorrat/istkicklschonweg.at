@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^confirm/(?P<token>.{24})/', ConfirmEmailView.as_view(), name="confirm-email"),
     url(r'^thanks/$', TemplateView.as_view(template_name="thanks.html")),
+    url(r'^privacy/$', TemplateView.as_view(template_name="privacy.html")),
     url(r'^\/?$', PetitionView.as_view())
 ]
 

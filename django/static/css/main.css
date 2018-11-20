@@ -13,6 +13,10 @@ body, html { margin: 0; padding: 0}
   margin: 0 !important;
 }
 
+.row {
+  padding: 32px 16px 32px 16px;
+}
+
 /* Text */
 body, .petition-input {
   font-family: Arvo, sans-serif;
@@ -21,6 +25,7 @@ body, .petition-input {
 h1 {
   font-size: 6rem;
   margin: 0;
+  
 }
 h2 {
   margin: 0;
@@ -29,6 +34,11 @@ h2 {
 h3 {
   margin: 0;
   font-size: 2rem;
+  display: inline-block;
+}
+h4 {
+  margin: 0;
+  font-size: 1.5rem;
   display: inline-block;
 }
 blockquote {
@@ -42,7 +52,9 @@ a {
   color: #F0F0F0;
 }
 p, span, input {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-family: Dosis, sans-serif;
+  font-weight: 600;
 }
 p {
   margin-top: 16px;
@@ -51,6 +63,18 @@ footer span {
   background-color: #FF2833;
   color: #F0F0F0;
   display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Hero */
@@ -63,7 +87,6 @@ footer span {
   min-height: 60vh;
 }
 .petition-container {
-  padding: 16px 16px 32px 16px;
   margin: 0 !important;
   background-color: #FF2833;
   color: #F0F0F0;
@@ -85,46 +108,60 @@ footer span {
 .intro {
   background-color: #232323;
   color: #F0F0F0;
-  padding: 32px;
   height: 100%;
+}
+
+
+/* Sharing */
+.social > h3 {
+  margin: 0 8px 0 8px;
+}
+.social a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform .2s ease-in-out, text-shadow .2s ease-in-out;
+}
+
+.social a:hover{
+  transform: translateY(-4px);
+  text-shadow: 0px 8px 0px #FF2833;
 }
 
 /* Sünden */ 
 section {
   background-color: #232323;
   background-image:
-  radial-gradient(#333333 5%, transparent 0), 
-  radial-gradient(#333333 10%, transparent 0);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
+    radial-gradient(#333333 5%, transparent 0), 
+    radial-gradient(#333333 10%, transparent 0);
+  
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
   mix-blend-mode: difference;
 
   color: #F0F0F0;
-  padding: 32px;
+  padding: 64px 32px 48px 32px;
   min-height: 240px;
 }
-section h3 {
+section:nth-child(odd) {
+  background-color: #232323;
+  background-image:
+    radial-gradient(#434343 10%, transparent 0), 
+    radial-gradient(#434343 5%, transparent 0);
+}
+
+section:nth-child(odd) > div {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: end;
+}
+section h3, section span {
   background-color: #232323;
 }
 
 /* Petition */
 .petition {
   margin-top: 16px;
-}
-
-::placeholder {
-  color: #F0F0F0;
-  opacity: .9;
-}
-
-:-ms-input-placeholder {
-  color: #F0F0F0;
-  opacity: .9;
-}
-
-::-ms-input-placeholder {
-  color: #F0F0F0;
-  opacity: .9;
 }
 
 .petition-input::selection {
@@ -151,7 +188,7 @@ section h3 {
   width: 100%;
   box-sizing: border-box;
   color: #FFF0F0;
-  transition: background-color .3s;
+  transition: background-color .07s;
 }
 
 label {
@@ -210,23 +247,18 @@ footer {
 }
 
 footer span {
+  font-size: 1rem;
   margin-bottom: 4px;
 }
 
 .footer-column {
-  margin-top: auto;
-  padding: 32px 16px 32px 16px;
+  padding: none;
+}
+.footer-column:last-child {
+  text-align: right;
 }
 
-/* Sharing */
-.social a {
-  display: inline-block;
-  font-size: 3rem;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-.social a:hover{
-  transform: translateY(-4px);
-  text-shadow: 0px 8px 0px #FF2833;
+/* Privacy */
+ol > li {
+  margin-top: 16px; 
 }

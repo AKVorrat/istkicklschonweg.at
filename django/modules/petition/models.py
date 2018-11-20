@@ -2,6 +2,7 @@ from django.db import models
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.urls import reverse
+from urllib.parse import urlparse
 from .tokens import TokenGenerator
 
 generator = TokenGenerator()
@@ -53,3 +54,13 @@ class Signature(models.Model):
         if generator.check_token(self, token):
             self.confirmed = True
             self.save()
+
+class Sin(models.Model):
+    description = models.CharField(max_length=256)
+    share_text = models.CharField(max_length=256)
+    source_url = models.URLField()
+
+    @property
+    def source_host(self):
+        url = urlparse(self.source_url)
+        return url.netloc

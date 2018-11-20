@@ -1,0 +1,38 @@
+[
+  {
+    "model": "petition.Sin",
+    "pk": 1,
+    "fields": {
+      "description": "900.000 Euro für Polizeipferde",
+      "share_text": "Massive Geldverschwendung für ein paar Polizeipferde – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://kurier.at/chronik/oesterreich/polizeipferde-ueberteuerter-einkauf/400067288"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 2,
+    "fields": {
+      "description": "Polizeirekrutierung im rechtsextremen Milieu",
+      "share_text": "Polizeirekrutierung auf rechtsextremen Websiten – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://derstandard.at/2000087799691/Das-Innenministerium-wirbt-auf-rechten-Verschwoerungsseiten"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 3,
+    "fields": {
+      "description": "Digitale Hausdurchsuchungen bei Asylwerbenden",
+      "share_text": "Schutzsuchenden ihre Menschenrechte aberkennen – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://epicenter.works/content/fremdenrecht-innenminister-kickl-will-schutzsuchenden-ihre-menschenrechte-aberkennen"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 4,
+    "fields": {
+      "description": "Versuchte Wiedereinführung der Vorratsdatenspeicherung durch die Hintertür",
+      "share_text": "Versuchte Wiedereinführung der Vorratsdatenspeicherung durch die Hintertür – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://derstandard.at/2000088029601/Regierung-will-verschaerfte-Vorratsdatenspeicherung-einfuehren"
+    }
+  }
+]

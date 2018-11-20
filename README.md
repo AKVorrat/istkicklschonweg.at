@@ -39,8 +39,12 @@ Initial Setup:
 # Migrate 
 > python ./manage.py migrate
 
+# Load Initial Data
+> python ./manage.py loaddata sins
+
 # Create an admin account
 > python ./manage.py createsuperuser
+
 ```
 
 Running:
@@ -51,42 +55,34 @@ Running:
 
 ```
 
-## Production Setup
-
-???
-
-### TODO:
- - Test Nginx Config
- - Systemd?
-
 ## Colors
 - Red
-    - #FF2833
-    - #CC252F
-    - #D6222B
+  - #FF2833
+  - #CC252F
+  - #D6222B
 
 - Grey
-    - #F0F0F0
-    - #232323
+  - #F0F0F0
+  - #232323
 
 - Text
-    - #F0F0F0 (on red or dark grey)
-    - #A3A3A3 (on light grey)
+  - #F0F0F0 (on red or dark grey)
+  - #A3A3A3 (on light grey)
 
 ## Strings
 - Unterüberschrift?
 
 - EMail
-    - Confirm
-        - Subject
-        - Body
-    - Thanks ?
+  - Confirm
+    - Subject
+    - Body
+  - Thanks ?
 
 - Petition
-    - Einleitender Text
-    - Danke
-    - Bestätigung (S)
+  - Einleitender Text
+  - Danke
+  - Bestätigung (S)
 
 - Sündenliste
-    - Einleitender Text
-    - Die Liste
+  - Einleitender Text
+  - Die Liste

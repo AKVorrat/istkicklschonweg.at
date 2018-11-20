@@ -5,35 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="theme-color" content="#232323">
-    <meta property="og:url"           content="https://istkicklschonweg.at" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Ist Kickl schon weg?" />
-    <meta property="og:description"   content="Nein." />
 
     <link href='/static/css/main.css' rel="stylesheet">
     <link href='/static/css/lib/flexboxgrid.min.css' rel="stylesheet">
     <link href='/static/css/fonts.css' rel="stylesheet">
     <link href='/static/css/lib/socicon.css' rel="stylesheet">
+
+    <meta property="og:url"           content="https://istkicklschonweg.at" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Ist Kickl schon weg?" />
+    <meta property="og:description"   content="Nein." />
+
     <title>Ist Kickl schon weg?</title>
   </head>
   <body>
     <div class="hero col">
-      <div class="hero-body petition-container row">
+      <div class="hero-body petition-container row bottom-xs">
         {% block herotext %}{% endblock %}
         {% block herocontent %}{% endblock %}
       </div>
       <div class="hero-foot">
         {% block herofoot %}{% endblock %}
+      </div>
     </div>
     {% block bodycontent %}{% endblock %}
 
-    <footer class="row">
-      <div class="footer-column col-xs-12 col-md-6">
-        <span>made by meks</span><br>
+    <footer class="col">
+      <div class="row">
       </div>
-      <div class="footer-column col-xs-12 col-md-6">
-        <span><a href="https://epicenter.works/kontakt">Impressum</a></span><br>
-        <span><a href="mailto:feedback@istkicklschonweg.at">feedback@istkicklschonweg.at</a></span><br>
+      <div class="row">
+        <div class="footer-column col-xs-6">
+          <div>
+            <span>Design &amp; Umsetzung:</span><br>
+            <span>Max Wolschlager</span>
+          </div>
+          <div>
+            <span><a href="https://github.com" target="_blank">Code auf Github</a></span>
+          </div>
+        </div>
+        <div class="footer-column col-xs-6">
+          <div>
+            <span>Impressum:</span><br>
+            <span><a href="https://epicenter.works/" target="_blank">epicenter.works</a>, Annagasse 8/1/8, 1010 Wien. </span><br>
+            <span><a href="mailto:feedback@istkicklschonweg.at" target="_blank">feedback@istkicklschonweg.at</a></span>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

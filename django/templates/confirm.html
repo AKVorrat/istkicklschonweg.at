@@ -3,8 +3,8 @@
 {% block herotext %}
   <div class="nein">
     {% if confirmed %}
-      <h1>Bestätigt.</h1>
-      <h3>Deine Unterschrift wurde bestätigt.</h3> <br/>
+      <h1>Alles klar,</h1>
+      <h3>wir haben dich jetzt zu Petition hinzugefügt. Danke!</h3> <br/>
     {% else %}
       <h1> x </h1>
       <h3>Ein Fehler ist aufgetreten.</h3> <br/>
@@ -13,5 +13,5 @@
 {% endblock %}
 
 {% block herofoot %}
-  {% include "social.html" %}
+  {% include "donations.html" %}
 {% endblock %}

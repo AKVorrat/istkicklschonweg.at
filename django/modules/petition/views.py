@@ -1,7 +1,7 @@
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
 from .forms import SignatureForm
-from .models import Signature
+from .models import Signature, Sin
 
 class PetitionView(FormView):
     template_name = 'index.html'
@@ -10,6 +10,7 @@ class PetitionView(FormView):
 
     def get_context_data(self, **kwargs):
         kwargs['signature_count'] = Signature.objects.filter(confirmed=True).count()
+        kwargs['sins'] = Sin.objects.all()
         return super(PetitionView, self).get_context_data(**kwargs)
 
     def form_valid(self, form, request):

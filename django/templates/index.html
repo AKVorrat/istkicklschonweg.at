@@ -15,7 +15,7 @@
 
 {% block herofoot %}
    <div class="intro row middle-xs">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
         <blockquote>
           Das hat sich Herbert Kickl als Innenminister geleistet:
         </blockquote>
@@ -25,46 +25,26 @@
 {% endblock %}
 
 {% block bodycontent %}
-  <section class="row middle-xs center-xs">
-    <h3>
-      900.000 Euro für Polizeipferde
-    </h3>
+  {% for sin in sins %}
+  <section class="row middle-xs">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 middle-xs">
+      <h3>
+        {{ sin.description }}
+      </h3>
+      <p>
+        – <span><a target="_blank" href="{{ sin.source_url|safe }}">{{ sin.source_host }}</a></span>
+      </p>
+      <div class="social">
+        <h3><a class="socicon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-mail" target="_blank" href="mailto:?&subject={{ sin.description|urlencode }}&body={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-whatsapp" target="_blank" href="https://api.whatsapp.com/send?text={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-telegram" target="_blank" href="https://telegram.me/share/url?url=https%3A//istkicklschonweg.at?text={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-instagram" href=""></a></h3>
+      </div>
+    </div>
   </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Digitale Hausdurchsuchungen bei Asylwerbenden
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Versuch die Vorratsdatenspeicherung wiedereinzuführen
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Beschluss des Überwachungspaketes
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Ausverkauf von Gesundheitsdaten
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Einschränkung der Medienfreiheit
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Verbot Polizist_innen bei der Arbeit zu filmen
-    </h3>
-  </section>
-  <section class="row middle-xs center-xs">
-    <h3>
-      Polizeirekrutierung im rechtsextremen Milieu
-    </h3>
-  </section>
+  {% endfor %}
   <!-- Buggy
   <div class="petition-container row middle-xs">
     <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
