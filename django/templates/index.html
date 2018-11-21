@@ -45,12 +45,26 @@
     </div>
   </section>
   {% endfor %}
-  <!-- Buggy
-  <div class="petition-container row middle-xs">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-      {% include "form.html" %}
-    </div>
+  <div class="petition-container row middle-xs center-xs">
+    <a id="scrollButton" style="display: none" onclick="scrollToTop()">
+      <i></i>
+    </a>
+    <noscript>
+     <a id="scrollButton" href="#petition">
+      <i></i>
+     </a>
+    </noscript>
+    <script>
+      document.getElementById('scrollButton').style.display = 'inline'
+      function scrollToTop() {
+        var y1 = window.scrollY;
+        y1 = y1 - 200;
+        window.scrollTo(0, y1);
+        if (y1 > 0) {
+          window.requestAnimationFrame(scrollToTop);
+        }
+      }
+    </script>
   </div>
-  -->
 {% endblock %}
  
