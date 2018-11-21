@@ -253,6 +253,8 @@ input[type="checkbox"]:checked:hover + label:before {
 /* Graveyard */
 .graveyard img {
   margin: 64px;
+  max-width: 20%;
+  max-height: 20%;
   filter: grayscale(100%) brightness(150%) contrast(0%);
   transition: filter .2s ease-in-out;
 }
