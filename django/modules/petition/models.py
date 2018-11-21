@@ -12,7 +12,7 @@ class Signature(models.Model):
     last_name = models.CharField(max_length=255)
 
     email = models.EmailField("E-Mail", max_length=255, unique=True)
-    token = models.CharField(max_length=20, unique=True)
+    token = models.CharField(max_length=24, unique=True)
 
     confirmed = models.BooleanField(default=False)
     newsletter = models.BooleanField()
