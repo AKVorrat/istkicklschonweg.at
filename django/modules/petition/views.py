@@ -20,9 +20,6 @@ class PetitionView(FormView):
     
     def post(self, request, *args, **kwargs):
         form = self.get_form()
-        for field in form:
-            print(field)
-            print(type(field))
         if form.is_valid():
             return self.form_valid(form, request)
         else:
