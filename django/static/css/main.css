@@ -101,6 +101,14 @@ i {
   background-color: #FF2833;
   color: #F0F0F0;
 }
+.nein-kickl {
+  height: 100%;
+  background-image: url(/static/img/kickl.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom; 
+  padding: 0 !important;
+}
 .nein {
   margin: auto 0 0 0;
 }
@@ -252,7 +260,7 @@ input[type="checkbox"]:checked:hover + label:before {
 
 /* Graveyard */
 .graveyard img {
-  margin: 64px;
+  margin: 64px 0 64px 0;
   max-width: 300px;
   max-height: 200px;
   filter: grayscale(100%) brightness(150%) contrast(30%);
