@@ -65,6 +65,16 @@ footer span {
   display: inline-block;
 }
 
+i {
+  border: solid #F0F0F0;
+  border-width: 0 12px 12px 0;
+  margin: 12px 0 0 12px;
+  display: inline-block;
+  padding: 12px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
 @media only screen and (max-width: 480px) {
   h1 {
     font-size: 3rem;
@@ -122,7 +132,7 @@ footer span {
   transition: transform .2s ease-in-out, text-shadow .2s ease-in-out;
 }
 
-.social a:hover{
+.social a:hover {
   transform: translateY(-4px);
   text-shadow: 0px 8px 0px #FF2833;
 }
@@ -261,4 +271,8 @@ footer span {
 /* Privacy */
 ol > li {
   margin-top: 16px; 
+}
+
+#scrollButton {
+  cursor: pointer;
 }
