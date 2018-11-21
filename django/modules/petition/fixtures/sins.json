@@ -34,5 +34,32 @@
       "share_text": "Versuchte Wiedereinführung der Vorratsdatenspeicherung durch die Hintertür – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
       "source_url": "https://derstandard.at/2000088029601/Regierung-will-verschaerfte-Vorratsdatenspeicherung-einfuehren"
     }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 5,
+    "fields": {
+      "description": "Beschluss des Überwachungspaketes",
+      "share_text": "Die umfassende Ausweitung des Überwachungsstaates – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://epicenter.works/thema/ueberwachungspaket"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 6,
+    "fields": {
+      "description": "Einschränkung der Medienfreiheit",
+      "share_text": "",
+      "source_url": ""
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 7,
+    "fields": {
+      "description": "Verbot Polizist_innen bei der Arbeit zu filmen",
+      "share_text": "",
+      "source_url": ""
+    }
   }
 ]
