@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             name='Sin',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=256)),
-                ('share_text', models.CharField(max_length=256)),
+                ('description', models.CharField(max_length=255)),
+                ('share_text', models.CharField(max_length=255)),
                 ('source_url', models.URLField()),
             ],
         ),
@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='signature',
             name='email',
-            field=models.EmailField(max_length=256, unique=True, verbose_name='E-Mail'),
+            field=models.EmailField(max_length=255, unique=True, verbose_name='E-Mail'),
         ),
     ]

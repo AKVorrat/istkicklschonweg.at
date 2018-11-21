@@ -7,18 +7,18 @@ class SignatureForm(forms.ModelForm):
     required_css_class = 'required'
     first_name = forms.CharField(
         label="Vorname",
-        max_length=256,
+        max_length=255,
         widget=forms.TextInput(attrs={'class': "petition-input"})
     )
     last_name = forms.CharField(
         label="Nachname",
-        max_length=256, 
+        max_length=255,
         widget=forms.TextInput(attrs={'class': "petition-input"})
     )
 
     email = forms.EmailField(
         label="E-Mail Adresse",
-        max_length=256, 
+        max_length=255,
         widget=forms.TextInput(attrs={'class': "petition-input"})
     )
 

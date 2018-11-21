@@ -17,10 +17,10 @@ class Migration(migrations.Migration):
             name='Signature',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=256)),
-                ('last_name', models.CharField(max_length=256)),
+                ('first_name', models.CharField(max_length=255)),
+                ('last_name', models.CharField(max_length=255)),
                 ('message', models.TextField()),
-                ('email', models.EmailField(max_length=256, unique=True)),
+                ('email', models.EmailField(max_length=255, unique=True)),
                 ('token', models.CharField(max_length=20, unique=True)),
                 ('confirmed', models.BooleanField(default=False)),
                 ('newsletter', models.BooleanField()),

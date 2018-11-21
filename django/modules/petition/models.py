@@ -8,10 +8,10 @@ from .tokens import TokenGenerator
 generator = TokenGenerator()
 
 class Signature(models.Model):
-    first_name = models.CharField(max_length=256)
-    last_name = models.CharField(max_length=256)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
 
-    email = models.EmailField("E-Mail", max_length=256, unique=True)
+    email = models.EmailField("E-Mail", max_length=255, unique=True)
     token = models.CharField(max_length=20, unique=True)
 
     confirmed = models.BooleanField(default=False)
@@ -56,8 +56,8 @@ class Signature(models.Model):
             self.save()
 
 class Sin(models.Model):
-    description = models.CharField(max_length=256)
-    share_text = models.CharField(max_length=256)
+    description = models.CharField(max_length=255)
+    share_text = models.CharField(max_length=255)
     source_url = models.URLField()
 
     @property
