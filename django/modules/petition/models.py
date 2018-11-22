@@ -13,6 +13,7 @@ class Signature(models.Model):
 
     email = models.EmailField("E-Mail", max_length=255, unique=True)
     token = models.CharField(max_length=24, unique=True)
+    emails_sent = models.IntegerField(default=0)
 
     confirmed = models.BooleanField(default=False)
     newsletter = models.BooleanField()
@@ -31,8 +32,8 @@ class Signature(models.Model):
         return '{0} {1}'.format(self.first_name, self.last_name)
 
     def send_confirmation_email(self, request):
-        self.token = generator.make_token(self)
-        self.save()
+        if not self.token:
+            self.token = generator.make_token(self)
         confirmation_url = '/confirm/{}/'.format(self.token)
         confirmation_url = request.build_absolute_uri(confirmation_url)
         send_mail(
@@ -49,6 +50,8 @@ class Signature(models.Model):
             ),
             fail_silently=False
         )
+        self.emails_sent += 1
+        self.save()
 
     def confirm(self, token):
         if generator.check_token(self, token):

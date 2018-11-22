@@ -33,6 +33,21 @@ class SignatureForm(forms.ModelForm):
         label=mark_safe('Ich stimme der <a target="_blank" href="/privacy">Privacy Policy</a> zu.')
     )
 
+    def clean(self):
+        super(SignatureForm, self).clean()
+        email = self.cleaned_data.get('email')
+        self.pending_signature = None
+        try:
+            s = Signature.objects.get(email=email)
+        except:
+            return
+        if not s.confirmed:
+            if s.emails_sent < 5:
+                self.pending_signature = s
+                self.add_error('email', 'Eine unbestätigte Unterschrift mit dieser E-Mail-Adresse existiert bereits. Wir haben die Bestätigungsanfrage erneut versandt.')
+            else:
+                self.add_error('email', 'Eine unbestätigte Unterschrift mit dieser E-Mail-Adresse existiert bereits und es wurden insgesamt bereits fünf Bestätigungsanfragen versandt.')
+
     class Meta:
         auto_id = False
         model = Signature
