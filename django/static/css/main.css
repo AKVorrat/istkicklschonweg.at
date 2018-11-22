@@ -261,8 +261,7 @@ input[type="checkbox"]:checked:hover + label:before {
 
 /* Graveyard */
 .graveyard h3 {
-  color: white;
-  font-size: 1rem;
+  color: #F0F0F0;
 }
 .graveyard img {
   margin: 64px 0 64px 0;
