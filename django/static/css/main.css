@@ -174,7 +174,7 @@ section:nth-child(odd) > div {
   justify-content: flex-end;
   text-align: end;
 }
-section h3, section span {
+section > h3, section span {
   background-color: #232323;
 }
 
@@ -297,12 +297,16 @@ ol > li {
   margin-top: 16px;
 }
 
-#scrollButton {
+/* Button */
+.button {
   cursor: pointer;
   background-color: #ff2833;
-  padding: 2rem 1rem;
-  font-size: 2rem;
+  padding: 16px 32px;
+  transition: background-color .2s;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arvo;
 }
-#scrollButton:hover {
+.button:hover {
   background-color: #cc252f;
 }
