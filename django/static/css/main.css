@@ -107,7 +107,7 @@ i {
   background-image: url(/static/img/kickl.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom; 
+  background-position: left bottom; 
   padding: 0 !important;
 }
 .nein {
