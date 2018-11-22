@@ -25,8 +25,7 @@
           Das hat sich Herbert Kickl als Innenminister geleistet:
         </blockquote>
       </div>
-    </div>
-  </div>
+   </div>
 {% endblock %}
 
 {% block bodycontent %}
@@ -42,7 +41,7 @@
       <div class="social">
         <h3><a class="socicon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ sin.share_text|urlencode }}"></a></h3>
-        <h3><a class="socicon-mail" target="_blank" href="mailto:?&subject={{ sin.description|urlencode }}&body={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-mail" target="_blank" href="mailto:?&amp;subject={{ sin.description|urlencode }}&amp;body={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-whatsapp" target="_blank" href="https://api.whatsapp.com/send?text={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-telegram" target="_blank" href="https://telegram.me/share/url?url=https%3A//istkicklschonweg.at?text={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-instagram" href=""></a></h3>
