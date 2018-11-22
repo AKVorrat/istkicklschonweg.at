@@ -291,9 +291,15 @@ footer span {
 
 /* Privacy */
 ol > li {
-  margin-top: 16px; 
+  margin-top: 16px;
 }
 
 #scrollButton {
   cursor: pointer;
+  background-color: #ff2833;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+}
+#scrollButton:hover {
+  background-color: #cc252f;
 }
