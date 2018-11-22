@@ -260,6 +260,10 @@ input[type="checkbox"]:checked:hover + label:before {
 }
 
 /* Graveyard */
+.graveyard h3 {
+  color: white;
+  font-size: 1rem;
+}
 .graveyard img {
   margin: 64px 0 64px 0;
   max-width: 300px;
@@ -291,9 +295,15 @@ footer span {
 
 /* Privacy */
 ol > li {
-  margin-top: 16px; 
+  margin-top: 16px;
 }
 
 #scrollButton {
   cursor: pointer;
+  background-color: #ff2833;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+}
+#scrollButton:hover {
+  background-color: #cc252f;
 }

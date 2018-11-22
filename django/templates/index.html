@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block herotext %}
-  
+
   <div class="col-xs-12 col-md-7 col-lg-8">
     <div class="nein-kickl row bottom-xs">
       <div class="nein">
@@ -50,14 +50,10 @@
     </div>
   </section>
   {% endfor %}
-  <div class="petition-container row middle-xs center-xs">
-    <a id="scrollButton" style="display: none" onclick="scrollToTop()">
-      <i></i>
-    </a>
+  <section class="row middle-xs center-xs">
+    <a id="scrollButton" style="display: none" onclick="scrollToTop()">Ich unterstütze die Rücktrittsforderung!</a>
     <noscript>
-     <a id="scrollButton" href="#petition">
-      <i></i>
-     </a>
+     <a id="scrollButton" href="#petition">Ich unterstütze die Rücktritts<wbr>forderung!</a>
     </noscript>
     <script>
       document.getElementById('scrollButton').style.display = 'inline'
@@ -70,5 +66,5 @@
         }
       }
     </script>
-  </div>
+  </section>
 {% endblock %}
