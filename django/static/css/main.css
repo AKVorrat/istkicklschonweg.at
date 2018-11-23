@@ -220,11 +220,12 @@ label.required:after {
 
 input[type="submit"] {
   font-family: Arvo, sans-serif;
-  background-color: #232323;
+  background-color: #FFF0F0;
+  color: #FF2833;
   cursor: pointer;
 }
 input[type="submit"]:hover {
-  background-color: #000 !important;
+  background-color: #FFFFFF !important;
 }
 
 input[type="checkbox"] {
