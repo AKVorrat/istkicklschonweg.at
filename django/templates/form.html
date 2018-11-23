@@ -1,24 +1,25 @@
-  {% load petition_filters %}
-  <div class="petition" id="petition">
-    <div class="petition-text">
-      <h3>Jetzt mitzeichnen!</h3><br/>
-      <p>Wir fordern den Rücktritt von Innenminister Herbert Kickl und bitten Bundespräsident Dr. Alexander Van der Bellen und Bundeskanzler Sebastian Kurz auf seine Entlassung hinzuwirken.</p>
-    </div>
-    <form method="post" novalidate>
-      {% csrf_token %}
+{% load petition_filters %}
 
-      {% for field in form %}
-        {% if field|field_type:'checkboxinput' %}
-          {{ field.errors }}
-          {{ field }}
-          {{ field.label_tag }}
-        {% else %}
-          {{ field.label_tag }}
-          {{ field.errors }}
-          {{ field }}
-        {% endif %}
-      {% endfor %}
-      <input class="petition-input" type="submit" value="Unterschreiben">
-      <label>* Pflichtfelder</label>
-    </form>
+<div class="petition" id="petition">
+  <div class="petition-text">
+    <h3>Jetzt mitzeichnen!</h3><br/>
+    <p>Wir fordern den Rücktritt von Innenminister Herbert Kickl und bitten Bundespräsident Dr. Alexander Van der Bellen und Bundeskanzler Sebastian Kurz auf seine Entlassung hinzuwirken.</p>
+  </div>
+  <form method="post" novalidate>
+    {% csrf_token %}
+
+    {% for field in form %}
+      {% if field|field_type:'checkboxinput' %}
+        {{ field.errors }}
+        {{ field }}
+        {{ field.label_tag }}
+      {% else %}
+        {{ field.label_tag }}
+        {{ field.errors }}
+        {{ field }}
+      {% endif %}
+    {% endfor %}
+    <input class="petition-input" type="submit" value="Unterschreiben">
+    <label>* Pflichtfelder</label>
+  </form>
 </div>

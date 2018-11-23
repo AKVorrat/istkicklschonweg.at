@@ -1,4 +1,6 @@
 
+{% load petition_filters %}
+
 <div class="intro social row center-xs middle-xs">
     <div class="col-xs-12">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
@@ -16,7 +18,7 @@
       <h2><a class="socicon-mail" target="_blank" href="mailto:?&amp;subject=istkicklschonweg.at&amp;body=Wir fordern den R%C3%BCcktritt von Herbert Kickl %E2%80%93 unserst%C3%BCtze jetzt unsere Petition%21 https%3A%2F%2Fistkicklschonweg.at"></a></h2>
     </div>
     <div class="col-xs-4 col-md-2 center-xs">
-      <h2><a class="socicon-whatsapp" target="_blank" href="https://api.whatsapp.com/send?text=Wir+fordern+den+R%C3%BCcktritt+von+Herbert+Kickl+%E2%80%93+unserst%C3%BCtze+jetzt+unsere+Petition%21+https%3A%2F%2Fistkicklschonweg.at"></a></h2>
+      <h2><a class="socicon-whatsapp" target="_blank" href="https://{% if request|is_mobile %}api{% else %}web{% endif %}.whatsapp.com/send?text=Wir+fordern+den+R%C3%BCcktritt+von+Herbert+Kickl+%E2%80%93+unserst%C3%BCtze+jetzt+unsere+Petition%21+https%3A%2F%2Fistkicklschonweg.at"></a></h2>
     </div>
     <div class="col-xs-4 col-md-2 center-xs">
       <h2><a class="socicon-telegram" target="_blank" href="https://telegram.me/share/url?url=Wir+fordern+den+R%C3%BCcktritt+von+Herbert+Kickl+%E2%80%93+unserst%C3%BCtze+jetzt+unsere+Petition%21+https%3A%2F%2Fistkicklschonweg.at"></a></h2>
