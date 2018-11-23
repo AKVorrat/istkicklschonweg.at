@@ -219,6 +219,15 @@ label.required:after {
   content: " *"
 }
 
+input[type="submit"] {
+  font-family: Arvo, sans-serif;
+  background-color: #232323;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #000 !important;
+}
+
 input[type="checkbox"] {
   box-sizing: border-box;
   display:none;
@@ -305,7 +314,7 @@ ol > li {
   transition: background-color .2s;
   text-decoration: none;
   display: inline-block;
-  font-family: Arvo;
+  font-family: Arvo, sans-serif;
 }
 .button:hover {
   background-color: #cc252f;
