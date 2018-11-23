@@ -18,14 +18,14 @@ body, html { margin: 0; padding: 0}
 }
 
 /* Text */
-body, .petition-input {
+body {
   font-family: Arvo, sans-serif;
   font-weight: 700;
 }
 h1 {
   font-size: 6rem;
   margin: 0;
-  
+
 }
 h2 {
   margin: 0;
@@ -51,7 +51,7 @@ blockquote {
 a {
   color: #F0F0F0;
 }
-p, span, input {
+p, span, input, .petition-input {
   font-size: 1.2rem;
   font-family: Dosis, sans-serif;
   font-weight: 600;
@@ -60,7 +60,6 @@ p {
   margin-top: 16px;
 }
 footer span {
-  background-color: #FF2833;
   color: #F0F0F0;
   display: inline-block;
 }
@@ -219,6 +218,15 @@ label.required:after {
   content: " *"
 }
 
+input[type="submit"] {
+  font-family: Arvo, sans-serif;
+  background-color: #232323;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #000 !important;
+}
+
 input[type="checkbox"] {
   box-sizing: border-box;
   display:none;
@@ -283,8 +291,9 @@ footer {
 footer span {
   font-size: 1rem;
   margin-bottom: 4px;
-}
+  background-color: #FF2833;
 
+}
 .footer-column {
   padding: none;
 }
@@ -305,7 +314,7 @@ ol > li {
   transition: background-color .2s;
   text-decoration: none;
   display: inline-block;
-  font-family: Arvo;
+  font-family: Arvo, sans-serif;
 }
 .button:hover {
   background-color: #cc252f;

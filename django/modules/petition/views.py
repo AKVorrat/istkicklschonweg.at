@@ -13,16 +13,14 @@ class PetitionView(FormView):
         kwargs['sins'] = Sin.objects.all()
         return super(PetitionView, self).get_context_data(**kwargs)
 
-    def form_valid(self, form, request):
-        res = super(PetitionView, self).form_valid(form)
-        form.instance.send_confirmation_email(request)
-        return res
-    
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            return self.form_valid(form, request)
+            form.instance.send_confirmation_email(request)
+            return self.form_valid(form)
         else:
+            if form.pending_signature:
+                form.pending_signature.send_confirmation_email(request)
             return self.form_invalid(form)
             
 class ConfirmEmailView(TemplateView):

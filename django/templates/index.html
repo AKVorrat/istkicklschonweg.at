@@ -6,7 +6,7 @@
     <div class="nein-kickl row bottom-xs">
       <div class="nein">
         <h1>Nein,</h1>
-        <h3>aber schon {{ signature_count }} {% if signature_count == 1 %}Person fordert{% else %}Leute fordern{% endif %} Kickls Rücktritt.</h3>
+        <h3>aber schon {{ signature_count }} {% if signature_count == 1 %}Person fordert{% else %}Menschen fordern{% endif %} Kickls Rücktritt.</h3>
       </div>
     </div>
   </div>
@@ -25,8 +25,7 @@
           Das hat sich Herbert Kickl als Innenminister geleistet:
         </blockquote>
       </div>
-    </div>
-  </div>
+   </div>
 {% endblock %}
 
 {% block bodycontent %}
@@ -42,7 +41,7 @@
       <div class="social">
         <h3><a class="socicon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ sin.share_text|urlencode }}"></a></h3>
-        <h3><a class="socicon-mail" target="_blank" href="mailto:?&subject={{ sin.description|urlencode }}&body={{ sin.share_text|urlencode }}"></a></h3>
+        <h3><a class="socicon-mail" target="_blank" href="mailto:?&amp;subject={{ sin.description|urlencode }}&amp;body={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-whatsapp" target="_blank" href="https://api.whatsapp.com/send?text={{ sin.share_text|urlencode }}"></a></h3>
         <h3><a class="socicon-telegram" target="_blank" href="https://telegram.me/share/url?url=https%3A//istkicklschonweg.at?text={{ sin.share_text|urlencode }}"></a></h3>
       </div>
@@ -50,9 +49,9 @@
   </section>
   {% endfor %}
   <section class="row middle-xs center-xs">
-    <a onclick="scrollToTop()" style="display: none" class="button" id="scrollButton"><h3>Ich unterstütze die Rücktritts<wbr>forderung!</h3></a>
+    <a onclick="scrollToTop()" style="display: none" class="button" id="scrollButton"><h3>Ich unterstütze die Rücktritts&shy;forderung!</h3></a>
     <noscript>
-      <a class="button" id="scrollButton" href="#petition"><h3>Ich unterstütze die Rücktritts<wbr>forderung!</h3></a>
+      <a class="button" id="scrollButton" href="#petition"><h3>Ich unterstütze die Rücktritts&shy;forderung!</h3></a>
     </noscript>
     <script>
       document.getElementById('scrollButton').style.display = 'inline'
