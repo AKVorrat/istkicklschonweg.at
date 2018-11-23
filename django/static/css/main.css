@@ -84,10 +84,6 @@ i {
   h3, blockquote {
     font-size: 1.5rem;
   }
-  .graveyard img {
-    max-width: 200px;
-    max-height: 150px;
-  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -297,6 +293,13 @@ input[type="checkbox"]:checked:hover + label:before {
 }
 .graveyard img:hover {
   filter: grayscale(0%) brightness(100%) contrast(100%);
+}
+
+@media only screen and (max-width: 480px) {
+  .graveyard img {
+    max-width: 200px;
+    max-height: 150px;
+  }
 }
 
 /* Footer */
