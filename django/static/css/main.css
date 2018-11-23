@@ -60,7 +60,6 @@ p {
   margin-top: 16px;
 }
 footer span {
-  background-color: #FF2833;
   color: #F0F0F0;
   display: inline-block;
 }
@@ -293,7 +292,9 @@ footer span {
   font-size: 1rem;
   margin-bottom: 4px;
 }
-
+.credits {
+  background-color: #FF2833;
+}
 .footer-column {
   padding: none;
 }
