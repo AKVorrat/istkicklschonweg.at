@@ -121,6 +121,13 @@ i {
   background-position: left bottom; 
   padding: 0 !important;
 }
+@media only screen and (max-width: 480px) {
+  .nein-kickl {
+    min-height: 220px;
+  }
+}
+
+
 .nein {
   margin: auto 0 0 0;
 }
