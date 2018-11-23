@@ -84,6 +84,10 @@ i {
   h3, blockquote {
     font-size: 1.5rem;
   }
+  .graveyard img {
+    max-width: 200px;
+    max-height: 150px;
+  }
 }
 
 @media only screen and (max-width: 360px) {
