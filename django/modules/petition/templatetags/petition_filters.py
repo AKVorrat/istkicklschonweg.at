@@ -17,7 +17,6 @@ pattern = re.compile(r'iphone|ipod|android|blackberry|mini|windows|palm')
 
 @register.filter(name='is_mobile')
 def is_mobile(request):
-    print(pattern.search(get_user_agent(request)))
     return pattern.search(get_user_agent(request))
 
 def get_user_agent(request):
