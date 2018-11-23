@@ -2,11 +2,11 @@
   <div class="petition" id="petition">
     <div class="petition-text">
       <h3>Jetzt mitzeichnen!</h3><br/>
-      <p>Wir fordern den Rücktritt von Innenminister Herbert Kickl und bitten Bundespräsident Dr. Alexander Van Der Bellen auf seine Entlassung hinzuwirken.</p>
+      <p>Wir fordern den Rücktritt von Innenminister Herbert Kickl und bitten Bundespräsident Dr. Alexander Van der Bellen und Bundeskanzler Sebastian Kurz auf seine Entlassung hinzuwirken.</p>
     </div>
     <form method="post" novalidate>
       {% csrf_token %}
-      
+
       {% for field in form %}
         {% if field|field_type:'checkboxinput' %}
           {{ field.errors }}
