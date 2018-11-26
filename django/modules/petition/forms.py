@@ -30,7 +30,7 @@ class SignatureForm(forms.ModelForm):
     privacy_policy = forms.BooleanField(
         initial=False,
         required=True,
-        label=mark_safe('Ich stimme der <a target="_blank" href="/privacy">Privacy Policy</a> zu.')
+        label=mark_safe('Ich stimme den <a target="_blank" href="/privacy">Datenschutzbedingungen</a> zu.')
     )
 
     def clean(self):
