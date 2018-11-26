@@ -1,0 +1,28 @@
+A backup of the style that has been automatically inlined in confirm.html
+
+<style>
+    .ExternalClass {width: 100%;}
+    body, html { margin: 0; padding: 0}  
+    body {
+    font-family: sans-serif;
+    width: 100% !important;
+    color: #F0F0F0;
+    }
+    a {
+    color: #F0F0F0;
+    }
+    h1 {
+    mso-line-height-rule: exactly;
+    margin: 64px 0 0 0;
+    }
+
+    #hero {
+    background-color: #FF2833;
+    }
+    #content {
+    background-color: #212121;
+    }
+    .container {
+    padding: 16px 32px;
+    }
+</style>
