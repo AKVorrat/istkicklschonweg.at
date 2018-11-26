@@ -36,30 +36,17 @@ class Signature(models.Model):
             self.token = generator.make_token(self)
         confirmation_url = '/confirm/{}/'.format(self.token)
         confirmation_url = request.build_absolute_uri(confirmation_url)
+
+        context = {
+            'confirmation_url': confirmation_url,
+            'full_name': self.full_name()
+        }
         send_mail(
             '[istkicklschonweg.at] Bitte bestätige deine E-Mail Adresse.',
-            """Hallo {0},
-            
-            danke für deine Unterstützung unserer Forderung zum Rücktritt von Innenminister Herbert Kickl.
-            Damit wir deine Stimme zählen können fehlt nur mehr ein kleiner Schritt!
-            
-            Bitte verwende diesen Bestätigungslink:
-            
-            {1}
-
-            Vielen Dank für deine Hilfe!
-
-            Liebe Grüße,
-            xyz von epicenter.works""".format(self.full_name(), confirmation_url),
+            render_to_string('email/confirm.txt', context),
             'noreply@epicenter.works',
             [self.email],
-            html_message=render_to_string(
-                'email/confirm.html', 
-                {
-                    'confirmation_url': confirmation_url,
-                    'full_name': self.full_name()
-                }
-            ),
+            html_message=render_to_string('email/confirm.html', context),
             fail_silently=False
         )
         self.emails_sent += 1

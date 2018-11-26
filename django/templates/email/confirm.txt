@@ -1,0 +1,13 @@
+Hallo {{ full_name }},
+            
+danke für deine Unterstützung unserer Forderung zum Rücktritt von Innenminister Herbert Kickl.
+Damit wir deine Stimme zählen können fehlt nur mehr ein kleiner Schritt!
+
+Bitte verwende diesen Bestätigungslink:
+
+{{ confirmation_url|safe }}
+
+Vielen Dank für deine Hilfe!
+
+Liebe Grüße,
+xyz von epicenter.works
