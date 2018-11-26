@@ -105,7 +105,7 @@ i {
   display: table;
 }
 .hero-body {
-  min-height: 55vh;
+  min-height: 65vh;
 }
 .petition-container {
   margin: 0 !important;
@@ -124,12 +124,23 @@ i {
   background-image: url(/static/img/kickl.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left; 
+  background-position: left bottom; 
   padding: 0 !important;
+}
+@media only screen and (max-width: 1024px) {
+  #nein-kickl {
+    min-height: 400px;
+    background-position: left; 
+  }
 }
 @media only screen and (max-width: 480px) {
   #nein-kickl {
-    min-height: 220px;
+    min-height: 300px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  #nein-kickl {
+    background-position: left bottom; 
   }
 }
 
