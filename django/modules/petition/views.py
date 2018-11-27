@@ -16,7 +16,6 @@ class PetitionView(FormView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            form.instance.save()
             form.instance.send_confirmation_email(request)
             return self.form_valid(form)
         else:

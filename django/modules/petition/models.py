@@ -34,6 +34,7 @@ class Signature(models.Model):
     def send_confirmation_email(self, request):
         if not self.token:
             self.token = generator.make_token(self)
+            self.save()
         confirmation_url = '/confirm/{}/'.format(self.token)
         confirmation_url = request.build_absolute_uri(confirmation_url)
 
