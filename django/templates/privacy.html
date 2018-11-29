@@ -9,6 +9,7 @@
 {% block herofoot %}
   <div class="intro row middle-xs">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h3>Datenschutzbedingungen</h3>
       <p> 
         Wenn du unsere Petition unterschreibst, speichern wir deinen Namen und deine E-Mail-Adresse, um deine Identität als TeilnehmerIn festzuhalten und um Mehrfachunterschriften auszuschließen. Diese Daten werden nach dem Ende der Unterzeichnungsfrist an die Österreichische Präsidentschaftskanzlei, Hofburg, Ballhausplatz, 1010 Wien übergeben und daraufhin von uns gelöscht.
       </p>
@@ -19,8 +20,20 @@
         Wir speichern außerdem, ob du wünschst, unseren Newsletter zu erhalten, und übertragen deine E-Mail-Adresse gegebenenfalls in unser Newslettersystem. Informationen zum Datenschutz bezüglich unseres Newsletters findest du unter <a href="https://epicenter.works/datenschutz#newsletter">hier</a>.
       </p>
       <p>
-        Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 9 Abs. 2 lit a DSGVO. Du kannst der Verarbeitung jederzeit widersprechen. Weitere Informationen zum Verantwortlichen für die Verarbeitung, zu deinen Rechten, Kontaktdaten, sowie zu den Datenschutzbedingungen beim Besuch unserer Websites findest du <a href="https://epicenter.works/datenschutz">hier</a>.
+        Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 9 Abs. 2 lit a DSGVO. Du kannst deine Einwilligung zur Verarbeitung mittels des Formulars unten jederzeit widerrufen. Weitere Informationen zum Verantwortlichen für die Verarbeitung, zu deinen Rechten, Kontaktdaten, sowie zu den Datenschutzbedingungen beim Besuch unserer Websites findest du <a href="https://epicenter.works/datenschutz">hier</a>.
       </p>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <a name="withdrawal"></a>
+      <h3>Widerruf der Einwilligung zur Verarbeitung</h3>
+      <p>Zum Widerruf gib die E-Mail-Adresse ein, mit der du unterschrieben hast. Du erhältst wieder eine E-Mail mit einem Link, mit dem du den Widerruf bestätigst.</p>
+      <form method="post" action="#withdrawal">
+        {% csrf_token %}
+        {{ form.email.errors }}
+        {{ form.email.label }}
+        {{ form.email }}
+        <input class="petition-input" type="submit" value="Einwilligung widerrufen">
+      </form>
     </div>
   </div>
 {% endblock %}

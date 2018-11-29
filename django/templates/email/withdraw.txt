@@ -1,0 +1,12 @@
+Hallo {{ full_name }},
+
+Wir haben eine Meldung bekommen, dass du deine Einwilligung zur
+Datenverarbeitung widerrufen willst. Mit dem Widerruf wirst du aus der Liste
+der Unterzeichner entfernt und deine Daten werden gelöscht.
+
+Um deinen Widerruf zu bestätigen, klicke den folgenden Bestätigungslink:
+
+{{ withdrawal_url|safe }}
+
+Liebe Grüße,
+epicenter.works
