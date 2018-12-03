@@ -14,6 +14,7 @@ class Signature(models.Model):
     email = models.EmailField("E-Mail", max_length=255, unique=True)
     token = models.CharField(max_length=24, unique=True)
     emails_sent = models.IntegerField(default=0)
+    withdrawal_emails_sent = models.IntegerField(default=0)
 
     confirmed = models.BooleanField(default=False)
     newsletter = models.BooleanField()
@@ -34,6 +35,7 @@ class Signature(models.Model):
     def send_confirmation_email(self, request):
         if not self.token:
             self.token = generator.make_token(self)
+            self.save()
         confirmation_url = '/confirm/{}/'.format(self.token)
         confirmation_url = request.build_absolute_uri(confirmation_url)
 
@@ -56,6 +58,30 @@ class Signature(models.Model):
         if generator.check_token(self, token):
             self.confirmed = True
             self.save()
+
+    def send_withdrawal_email(self, request):
+        withdrawal_url = '/withdraw/{}/'.format(self.token)
+        withdrawal_url = request.build_absolute_uri(withdrawal_url)
+
+        context = {
+            'withdrawal_url': withdrawal_url,
+            'full_name': self.full_name()
+        }
+        send_mail(
+            '[istkicklschonweg.at] Bitte bestätige deinen Widerruf.',
+            render_to_string('email/withdraw.txt', context),
+            'noreply@epicenter.works',
+            [self.email],
+            html_message=render_to_string('email/withdraw.html', context),
+            fail_silently=False
+        )
+        self.withdrawal_emails_sent += 1
+        self.save()
+
+    def withdraw(self, token):
+        if generator.check_token(self, token):
+            self.delete()
+
 
 class Sin(models.Model):
     description = models.CharField(max_length=255)

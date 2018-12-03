@@ -39,7 +39,7 @@ class SignatureForm(forms.ModelForm):
         self.pending_signature = None
         try:
             s = Signature.objects.get(email=email)
-        except:
+        except Signature.DoesNotExist:
             return
         if not s.confirmed:
             if s.emails_sent < 5:
@@ -52,3 +52,21 @@ class SignatureForm(forms.ModelForm):
         auto_id = False
         model = Signature
         fields = ['first_name', 'last_name', 'email', 'newsletter']
+
+class WithdrawalForm(forms.Form):
+    email = forms.EmailField(
+        label="E-Mail-Adresse",
+        max_length=255,
+        widget=forms.TextInput(attrs={'class': "petition-input"})
+    )
+
+    def clean(self):
+        super(WithdrawalForm, self).clean()
+        email = self.cleaned_data.get('email')
+        try:
+            s = Signature.objects.get(email=email)
+        except Signature.DoesNotExist:
+            self.add_error('email', 'Unbekannte E-Mail-Adresse.')
+            return
+        if s.withdrawal_emails_sent >= 5:
+            self.add_error('email', 'Wir haben bereits 5 Bestätigungs-E-Mails an diese Adresse versandt. Prüfe bitte auch deinen Spamordner. Bei weiteren Fragen melde dich bitte unter office@epicenter.works.')

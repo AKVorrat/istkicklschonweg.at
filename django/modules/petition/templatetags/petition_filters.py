@@ -20,4 +20,7 @@ def is_mobile(request):
     return pattern.search(get_user_agent(request))
 
 def get_user_agent(request):
-    return request.META['HTTP_USER_AGENT'].lower()
+    if 'HTTP_USER_AGENT' in request.META:
+        return request.META['HTTP_USER_AGENT'].lower()
+    else:
+        return ''
