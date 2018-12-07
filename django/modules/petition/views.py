@@ -17,11 +17,16 @@ class PetitionView(FormView):
         form = self.get_form()
         if form.is_valid():
             form.instance.send_confirmation_email(request)
-            return self.form_valid(form)
         else:
             if form.pending_signature:
-                form.pending_signature.send_confirmation_email(request)
-            return self.form_invalid(form)
+                if form.pending_signature.emails_sent < 5:
+                    form.pending_signature.send_confirmation_email(request)
+            elif form.confirmed_signature:
+                if form.confirmed_signatue.emails_sent < 5:
+                    form.confirmed_signature.send_already_confirmed_email(request)
+            else:
+                return self.form_invalid(form)
+        return self.form_valid(form)
             
 class ConfirmEmailView(TemplateView):
     template_name = 'confirm.html'
@@ -43,8 +48,8 @@ class PrivacyView(FormView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            s = Signature.objects.get(email=form.cleaned_data.get('email'))
-            s.send_withdrawal_email(request)
+            if form.signature:
+                form.signature.send_withdrawal_email(request)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
@@ -53,9 +58,8 @@ class ConfirmWithdrawalView(TemplateView):
     template_name = 'withdraw.html'
 
     def get(self, request, *args, token=None, **kwargs):
-        print('token:', token)
         try:
-            signature = Signature.objects.get(token=token)
+            signature = Signature.objects.get(withdrawal_token=token)
         except Signature.DoesNotExist:
             return super().get(request, *args, withdrawn=False, **kwargs)
         signature.withdraw(token)
