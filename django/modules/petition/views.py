@@ -22,7 +22,7 @@ class PetitionView(FormView):
                 if form.pending_signature.emails_sent < 5:
                     form.pending_signature.send_confirmation_email(request)
             elif form.confirmed_signature:
-                if form.confirmed_signatue.emails_sent < 5:
+                if form.confirmed_signature.emails_sent < 5:
                     form.confirmed_signature.send_already_confirmed_email(request)
             else:
                 return self.form_invalid(form)
