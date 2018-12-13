@@ -363,3 +363,28 @@ ol > li {
 .button:hover {
   background-color: #cc252f;
 }
+
+/* Shareables */
+.shareables > div.shareables-title {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+.shareable {
+  width: 220px;
+  height: 220px;
+}
+.shareable > a {
+  width: 100%;
+  height: 100%;
+}
+.shareable-image {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #eee;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
