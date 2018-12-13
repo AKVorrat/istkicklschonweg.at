@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.style.backgroundImage = `url('${entry.target.parentElement.getAttribute('href')}')`;
-          console.log(entry.target)
           lazyBackgroundObserver.unobserve(entry.target);
         }
       });
