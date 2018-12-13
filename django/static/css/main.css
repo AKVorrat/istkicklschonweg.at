@@ -372,6 +372,7 @@ ol > li {
   text-align: center;
 }
 .shareable {
+  position: relative;
   width: 220px;
   height: 220px;
 }
@@ -390,4 +391,32 @@ ol > li {
 }
 div.shareable-image {
   display: none;
+}
+div.shareable-overlay {
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  left: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  color: transparent;
+  text-align: center;
+  font-size: 100px;
+  line-height: 200px;
+  text-decoration: underline;
+}
+div.shareable-overlay:hover {
+  animation: 0.2s makevisible;
+  animation-fill-mode: forwards;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+
+}
+
+@keyframes makevisible {
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+  }
 }
