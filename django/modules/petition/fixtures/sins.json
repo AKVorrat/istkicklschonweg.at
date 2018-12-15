@@ -50,7 +50,7 @@
     "fields": {
       "description": "900.000 Euro für Polizeipferde",
       "share_text": "900.000 Euro für Polizeipferde – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
-      "source_url": "https://derstandard.at/2000087799691/Das-Innenministerium-wirbt-auf-rechten-Verschwoerungsseiten"
+      "source_url": "https://kurier.at/chronik/oesterreich/millionenprojekt-berittene-polizei-wird-teurer-als-geplant/400039759"
     }
   },
   {
@@ -106,6 +106,14 @@
       "share_text": "Kickl stellt Chefredakteur einer rechtsextremen Zeitschrift als Kommunikationschef ein – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
       "source_url": "https://derstandard.at/2000070809284/Kickls-Kommunikationschef-gefallen-auf-Facebook-Rechtsextreme"
     }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 13,
+    "fields": {
+      "description": "\"Armenpolizei\", die Jagd auf Sozialbetrüger macht",
+      "share_text": "Eine eigene Spezialeinheit, die Jagd auf Sozialbetrüger macht - einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
+      "source_url": "https://www.krone.at/1791823"
+    }
   }
-
 ]
