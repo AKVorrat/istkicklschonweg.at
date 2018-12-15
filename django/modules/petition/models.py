@@ -15,6 +15,7 @@ class Signature(models.Model):
     token = models.CharField(max_length=24, unique=True)
     emails_sent = models.IntegerField(default=0)
     withdrawal_emails_sent = models.IntegerField(default=0)
+    withdrawal_token = models.CharField(max_length=24, null=True, blank=True)
 
     confirmed = models.BooleanField(default=False)
     newsletter = models.BooleanField()
@@ -54,13 +55,33 @@ class Signature(models.Model):
         self.emails_sent += 1
         self.save()
 
+    def send_already_confirmed_email(self, request):
+        context = {
+            'full_name': self.full_name()
+        }
+        send_mail(
+            '[istkicklschonweg.at] Du hast bereits an der Petition teilgenommen.',
+            render_to_string('email/already_confirmed.txt', context),
+            'noreply@epicenter.works',
+            [self.email],
+            html_message=render_to_string('email/already_confirmed.html', context),
+            fail_silently=False
+        )
+        self.emails_sent += 1
+        self.save()
+
+
     def confirm(self, token):
         if generator.check_token(self, token):
             self.confirmed = True
+            self.emails_sent = 0
             self.save()
 
     def send_withdrawal_email(self, request):
-        withdrawal_url = '/withdraw/{}/'.format(self.token)
+        if not self.withdrawal_token:
+            self.withdrawal_token = generator.make_token(self)
+            self.save()
+        withdrawal_url = '/withdraw/{}/'.format(self.withdrawal_token)
         withdrawal_url = request.build_absolute_uri(withdrawal_url)
 
         context = {

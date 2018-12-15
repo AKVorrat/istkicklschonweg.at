@@ -37,16 +37,16 @@ class SignatureForm(forms.ModelForm):
         super(SignatureForm, self).clean()
         email = self.cleaned_data.get('email')
         self.pending_signature = None
+        self.confirmed_signature = None
         try:
             s = Signature.objects.get(email=email)
         except Signature.DoesNotExist:
             return
+
         if not s.confirmed:
-            if s.emails_sent < 5:
-                self.pending_signature = s
-                self.add_error('email', 'Eine unbestätigte Unterschrift mit dieser E-Mail-Adresse existiert bereits. Wir haben die Bestätigungsanfrage erneut versandt.')
-            else:
-                self.add_error('email', 'Eine unbestätigte Unterschrift mit dieser E-Mail-Adresse existiert bereits und es wurden insgesamt bereits fünf Bestätigungsanfragen versandt.')
+            self.pending_signature = s
+        else:
+            self.confirmed_signature = s
 
     class Meta:
         auto_id = False
@@ -63,10 +63,10 @@ class WithdrawalForm(forms.Form):
     def clean(self):
         super(WithdrawalForm, self).clean()
         email = self.cleaned_data.get('email')
+        self.signature = None
         try:
-            s = Signature.objects.get(email=email)
+            self.signature = Signature.objects.get(email=email)
         except Signature.DoesNotExist:
-            self.add_error('email', 'Unbekannte E-Mail-Adresse.')
             return
-        if s.withdrawal_emails_sent >= 5:
-            self.add_error('email', 'Wir haben bereits 5 Bestätigungs-E-Mails an diese Adresse versandt. Prüfe bitte auch deinen Spamordner. Bei weiteren Fragen melde dich bitte unter office@epicenter.works.')
+        if self.signature.withdrawal_emails_sent >= 5:
+            self.signature = None
