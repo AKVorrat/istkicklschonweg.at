@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.style.backgroundImage = `url('${entry.target.parentElement.getAttribute('href')}')`;
+          entry.target.style.backgroundImage = `url('${entry.target.parentElement.getAttribute('href').replace('.png', '_thumb.png')}')`;
           lazyBackgroundObserver.unobserve(entry.target);
         }
       });
