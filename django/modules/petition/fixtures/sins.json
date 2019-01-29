@@ -94,7 +94,7 @@
     "pk": 11,
     "fields": {
       "description": "Kickls oberster Beamter in verschwörungstheoretischen Kreisen unterwegs",
-      "share_text": " Kickl macht rassistischen Verschwörungstheoretiker zu obersten Beamten im BMI – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
+      "share_text": "Kickl macht rassistischen Verschwörungstheoretiker zu obersten Beamten im BMI – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
       "source_url": "https://derstandard.at/2000090699198/Israelkritik-Die-Facebook-Aktivitaeten-des-Peter-Goldgruber"
     }
   },
@@ -114,6 +114,42 @@
       "description": "\"Armenpolizei\", die Jagd auf Sozialbetrüger macht",
       "share_text": "Eine eigene Spezialeinheit, die Jagd auf Sozialbetrüger macht - einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
       "source_url": "https://www.krone.at/1791823"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 14,
+    "fields": {
+      "description": "Kickl will binationalen Paaren die Ehe für alle verbieten",
+      "share_text": "Kickl will nicht, dass binationale homosexuelle Paare heiraten – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern.",
+      "source_url": "https://derstandard.at/2000096933204/Trotz-Ehe-fuer-alle-Neue-Heiratsverbote-fuer-homosexuelle-Paare"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 15,
+    "fields": {
+      "description": "Kickl stellt die Menschenrechtskonvention infrage",
+      "share_text": "Kickl stellt die Menschenrechtskonvention in Frage –  einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern.",
+      "source_url": "https://derstandard.at/2000096888042/Kickl-stellt-Menschenrechtskonvention-in-Frage?fbclid=IwAR1c16mE8yaUYdKys1JaaiZ72g4jhDF9nv9GTE6XB0Mk_74v9fCigBaJV14"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 16,
+    "fields": {
+      "description": "Kickl streicht Trainerinnengeld für Polizeischulung",
+      "share_text": "Kickl streicht Trainerinnengeld für Polizeischulung – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
+      "source_url": "https://derstandard.at/2000083730389/Innenministerium-streicht-Trainerinnengeld-fuer-Polizeischulung"
+    }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 17,
+    "fields": {
+      "description": "Kickl prüft, wie Freiheitsberaubung bei Asylwerbenden umgesetzt werden kann",
+      "share_text": "Kickl prüft, wie Asylwerber ihrer Freiheit beraubt werden können - einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern!",
+      "source_url": "https://news.orf.at/#/stories/3104516/"
     }
   }
 ]
