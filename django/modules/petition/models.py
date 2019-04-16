@@ -113,3 +113,6 @@ class Sin(models.Model):
     def source_host(self):
         url = urlparse(self.source_url)
         return url.netloc
+
+    def __str__(self):
+        return self.description
