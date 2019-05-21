@@ -106,6 +106,15 @@
       "share_text": "Kickl stellt Chefredakteur einer rechtsextremen Zeitschrift als Kommunikationschef ein – einer von vielen Gründen, weshalb wir Herbert Kickls Rücktritt fordern! #istkicklschonweg",
       "source_url": "https://derstandard.at/2000070809284/Kickls-Kommunikationschef-gefallen-auf-Facebook-Rechtsextreme"
     }
+  },
+  {
+    "model": "petition.Sin",
+    "pk": 13,
+    "fields": {
+      "description": "Recht muss Politik folgen, nicht Politik dem Recht",
+      "share_text": "Alte Gesetze würden allerdings oftmals im Wege stehen, wenn es darum gehe 'zu tun, was nötig ist'. Er jedenfalls halte an dem Grundsatz fest: 'Das Recht muss Politik folgen, nicht Politik dem Recht.' #istkicklschonweg",
+      "source_url": "https://diepresse.com/home/innenpolitik/5566984/Asyl_Recht-muss-Politik-folgen-nicht-Politik-dem-Recht"
+    }
   }
 
 ]
